@@ -1,0 +1,46 @@
+ft-workout-session-form {
+    display: block;
+}
+
+.ft-session-form-tbl {
+    margin-top: .25rem;
+    th {
+        font-size: .75rem;
+    }
+}
+
+.ft-session-form-top-area {
+    margin-top: .25rem;
+
+    h3 {
+        padding: 0;
+    }
+}
+
+.ft-session-button-area {
+    padding-top: .25rem;
+}
+
+.set-complete-btn {
+    font-size: .65rem;
+    font-variant: small-caps;
+}
+
+.btn-small {
+    font-size: .75rem;
+    font-weight: bold;
+    font-variant: small-caps;
+    margin-right: .25rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.col-weight-and-sets {
+    width: 11%;
+}
+
+.col-barbell {
+    width: 34%;
+}

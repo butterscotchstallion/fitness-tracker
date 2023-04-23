@@ -1,0 +1,55 @@
+.ft-routine-days-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        font-variant: small-caps;
+    }
+}
+
+.ft-routine-days-wrapper {
+    margin: 0;
+}
+
+.ft-routine-day-checkbox-area {
+    text-align: center;
+}
+
+.ft-save-routine-days {
+    font-size: .75rem;
+}
+
+.ft-today {
+    font-weight: bold;
+}
+
+.ft-routine-days-tbl {
+    td {
+        text-align: center;
+        padding: .25rem;
+        font-size: .75rem;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+
+        label { 
+            cursor: pointer; 
+            margin: 0;
+        }
+
+        &.highlighted {
+            background-color: purple;
+            color: #fff;
+        }
+    }
+}
+
+.ft-routine-day-checkbox {
+    padding: 0;
+    margin: 0;
+}
+
+.ft-routine-days-lbl {
+    display: block;
+    padding: 0;
+}

@@ -1,0 +1,90 @@
+<form method="post" [formGroup]="formExercises" (ngSubmit)="onSubmit()">
+    <div class="row ft-session-form-top-area">
+        <div class="col-lg-7">
+            <h3><i class="bi-alarm"></i> New Session</h3>
+
+            <p *ngIf="sessionStartTime">Session started at {{sessionStartTime}}</p>
+        </div>
+
+        <div class="col-lg-2">
+            <ft-routine-selector></ft-routine-selector>
+        </div>
+
+        <div class="col-lg-3" *ngIf="exercises.length > 0">
+            <button type="submit"
+                    class="btn btn-success btn-sm float-right new-session-button"
+                    [disabled]=!isSessionValid>
+                    <i class="bi-save"></i> Save Session
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p *ngIf="!loading && exercises.length === 0">
+                No exercises found for routine "{{selectedRoutine?.name}}".
+            </p>
+            <div *ngIf="loading" class="spinner-border spinner-border-sm" role="status"></div>
+
+            <table  *ngIf="exercises.length > 0"
+                    width="100%"
+                    class="ft-session-form-tbl table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Exercise</th>
+                        <th class="col-barbell">Barbell</th>
+                        <th class="col-weight-and-sets">Sets Completed</th>
+                        <th class="col-weight-and-sets">Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of exercises">
+                        <ng container [formGroup]="e">
+                            <td>
+                                {{e.name}}
+                            </td>
+                            
+                            <!-- barbell display -->
+                            <td class="col-barbell">
+                                <ft-barbell-weights [weight]=e.weight></ft-barbell-weights>
+                            </td>
+
+                            <!-- sets completed -->
+                            <td class="col-weight-and-sets">
+                                <input type="number"
+                                    min=0
+                                    max=5
+                                    class="form-control"
+                                    name="setsCompleted"
+                                    formControlName="setsCompleted">
+                                
+                                <div class="ft-session-button-area">     
+                                    <button type="button"
+                                            class="btn btn-success set-complete-btn">
+                                        <i class="bi bi-check-square-fill"></i> Set Complete
+                                    </button>
+                                </div>
+                            </td>
+
+                            <!-- weight -->
+                            <td class="col-weight-and-sets">
+                                <input type="number"
+                                    min=1
+                                    name="exerciseWeight"
+                                    class="form-control"
+                                    formControlName="weight">
+                                
+                                <div class="ft-session-button-area">
+                                    <button type="button"
+                                            class="btn btn-danger btn-small">-5</button>
+                                    <button type="button"
+                                            class="btn btn-success btn-small float-right">+5</button>
+                                </div>
+                            </td>
+                        </ng-container>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>

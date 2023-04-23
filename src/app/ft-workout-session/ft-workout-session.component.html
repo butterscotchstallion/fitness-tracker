@@ -1,0 +1,26 @@
+<div class="row" *ngIf="sessions.length > 0">
+    <div class="col-lg-10">
+        <h3><i class="bi-hourglass-split"></i> Sessions</h3>
+    </div>
+</div>
+
+<table class="table table-striped table-bordered" *ngIf="sessions.length > 0">
+    <thead>
+        <tr>
+            <th class="col-date">Date</th>
+            <th>Routine</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of sessions">
+            <td class="col-date">{{s.createdAt}}</td>
+            <td>{{s.routineName}}</td>
+            <td title="From {{s.createdAt}} to {{s.completedAt}}">
+                <i class="bi-alarm-fill"></i> {{s.durationInSeconds | amDuration:'seconds'}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p *ngIf="!loading && sessions.length === 0">No workout sessions found. How disappointing.</p>

@@ -1,0 +1,64 @@
+$width: 300px;
+
+.ft-barbell-weights-wrapper {
+    position: relative;
+    z-index: 1;
+    overflow: auto;
+}
+
+.ft-barbell {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    border-bottom: 7px solid #000;
+    display: block;
+    height: 7px;
+    width: $width;
+}
+
+.ft-barbell-weight-list {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100px;
+
+    li {
+        font-style: Consolas, fixed-width;
+        font-weight: bold;
+        display: inline-block;
+        padding-right: .25rem;
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        z-index: 50;
+
+        &.ft-separator {
+            width: 100px;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &.plate-half {
+            background-color: lime;
+        }
+
+        &.plate-5 {
+            background-color: pink;
+        }
+
+        &.plate-10 {
+            background-color: red;
+        }
+
+        &.plate-25 {
+            background-color: skyblue;
+        }
+
+        &.plate-45 {
+            background-color: green;
+        }
+    }
+}

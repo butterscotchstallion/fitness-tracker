@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap-icons/font/bootstrap-icons';
+$enable-flex: true;
+
+.hr {
+    height: 1px;
+    border-bottom: 2px solid #666;
+}
+
+.new-session-button {
+    margin-top: 5px;
+}
+
+.col-weight-and-sets {
+    width: 15%;
+}
+
+.isWorkoutDay {
+    background: #D5D1FF url('/assets/images/berserk.webp') no-repeat top left;
+}
+
+.isRestDay {
+    background: lightgray url('/assets/images/sleepycat.jpg') repeat top left;
+}

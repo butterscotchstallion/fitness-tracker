@@ -1,0 +1,44 @@
+<form [formGroup]="routineDaysForm" (ngSubmit)="onSubmit()">
+    <div class="ft-routine-days-wrapper" *ngIf="routineDays.length > 0">
+        <div class="row">
+            <div class="col-lg-5">
+                <label class="ft-routine-days-lbl">
+                    Routine Days
+                </label>
+            </div>
+            <div class="col-lg-7">
+                <button type="submit"
+                        class="btn btn-success btn-sm float-right ft-save-routine-days"
+                        [disabled]="routineDaysForm.invalid || routineDaysForm.pristine">
+                    <i class="bi-save"></i> Save Routine Days
+                </button>
+            </div>
+        </div>
+        
+        <table class="ft-routine-days-tbl table table-condensed table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <td *ngFor="let day of routineDays"
+                        [ngClass]="{ 'highlighted': day.isWorkoutDay }"
+                        [attr.title]="day.isWorkoutDay ? 'You are working out on this day' : 'You are resting on this day'">
+                        
+                        <label for="ft-routine-day-{{day.name}}">
+                            {{day.name}}
+                        </label>
+                        
+                        <div class="ft-routine-day-checkbox-area">
+                            <input  type="checkbox"
+                                    name="ft-routine-days[]"
+                                    id="ft-routine-day-{{day.name}}"
+                                    [formControlName]="day.name"
+                                    value="day.name"
+                                    class="ft-routine-day-checkbox">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<span *ngIf="!loading && routineDays.length === 0">No routine days defined.</span>

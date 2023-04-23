@@ -1,0 +1,45 @@
+<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="row ft-title-row">
+        <div class="col-lg-4">
+            <h2 id='title-header'>Fitness Tracker</h2>
+        </div>
+
+        <div class="col-lg-2 selector-area">
+            <ft-program-selector (onProgramSelected)=setSelectedProgram></ft-program-selector>
+        </div>
+        <div class="col-lg-6 selector-area">
+            <ft-routine-days></ft-routine-days>
+        </div>
+    </div>
+    
+    <div class="hr"></div>
+    
+    <div class="alert alert-danger d-flex align-items-center"
+         role="alert"
+         *ngIf="errata.routineDays.saveError">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+        <div>
+            Error saving routine days!
+        </div>
+    </div>
+
+    <div class="alert alert-success d-flex align-items-center"
+         role="alert"
+         *ngIf="errata.routineDays.saveOK">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div>
+          Routine days saved!
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <ft-workout-session-form></ft-workout-session-form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ft-workout-session-list></ft-workout-session-list>
+        </div>
+    </div>
+</div>

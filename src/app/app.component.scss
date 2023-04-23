@@ -1,0 +1,31 @@
+
+.container {
+    background-color: #fff;
+}
+
+body.isWorkoutDay {
+    .container {
+        margin-right: 1rem;
+    }
+}
+
+
+.selector-area {
+    padding-top: 6px;
+}
+
+.block {
+    display: block;
+}
+
+.date-subheader {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: #666;
+    font-size: .85rem;
+}
+
+.alert div {
+    padding-left: 10px;
+}

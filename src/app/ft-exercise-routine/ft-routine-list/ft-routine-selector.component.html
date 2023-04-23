@@ -1,0 +1,10 @@
+<label class="block">Routine</label>
+<select class="form-control ft-exercise-routine-list"
+        id="ft-routine-list"
+        [disabled]=loading
+        (change)="onRoutineChanged($event)">
+    <option disabled *ngIf="!loading && !routines">No routines found :(</option>
+    <option disabled>Select Routine</option>
+    <option value="{{r.routineId}}"
+            *ngFor="let r of routines">{{r.name}}</option>
+</select>

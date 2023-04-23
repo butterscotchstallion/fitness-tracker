@@ -1,0 +1,20 @@
+<div class="ft-barbell-weights-wrapper row">
+    <div class="ft-barbell"></div>
+    
+    <div class="col-lg-8">
+        <ul class="ft-barbell-weight-list">
+            <li *ngFor="let plate of plates.left" [ngClass]="plate.className">
+                {{plate.weight}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-lg-4">
+        <ul class="ft-barbell-weight-list float-right">
+            <li *ngFor="let plate of plates.right" [ngClass]="plate.className">
+                {{plate.weight}}
+            </li>
+        </ul>
+    </div>
+</div>
+
